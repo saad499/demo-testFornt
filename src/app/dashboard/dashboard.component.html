@@ -1,0 +1,43 @@
+<div class="d-flex min-vh-100">
+  <div class="col-lg-3 bg-light" style="width: 15%;">
+      <!-- Contenu du sidenav -->
+      <h2 class="text-center">Indatacore</h2>
+      <div class="d-flex justify-content-center align-items-center min-vh-100">
+      <ul class="list-group w-100 text-center">
+        <li class="list-group-item"routerLinkActive="active">
+          <a class="nav-link" routerLink="/dashboard" >
+            <i class="bi bi-speedometer2 me-2"></i>
+            Dashboard
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a class="nav-link" routerLink="/data-table">
+            <i class="bi bi-table me-2"></i>
+            Data table
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a class="nav-link" routerLink="/uploader">
+            <i class="bi bi-cloud-upload me-2"></i>
+            Uploaders
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+    <!-- Contenu principal -->
+  <div class="col-lg-12" style="width: 85%;">
+    <!-- Contenu principal de votre application -->
+    <h1 class="text-center mt-5 mb-5">Dashboard</h1>
+    <div class="row justify-content-center" style=" height: 60%;">
+      <div class="col-lg-3 m-4" style="background-color: red;">
+        <app-bar-chart></app-bar-chart>
+      </div>
+      <div class="col-lg-3 m-4" style="background-color: blue;">
+        <app-graphe-condidat></app-graphe-condidat>
+      </div>
+      <div class="col-lg-3 m-4" style="background-color: yellow;">
+        <app-pie-chart></app-pie-chart>
+      </div>
+    </div>
+</div>
