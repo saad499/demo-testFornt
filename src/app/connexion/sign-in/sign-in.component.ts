@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/User.model';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -10,19 +12,20 @@ export class SignInComponent implements OnInit {
 
 
 
-  username!: string;
-  password!: string;
+  username: string = '';
+  password: string = '';
 
-  constructor(private router:Router) { }
+  constructor(private userService: UserService,private router:Router) { }
   signIn(){
-    if (this.username === 'saad' && this.password === '123') {
-      // Connexion réussie, effectuer les actions nécessaires
-      console.log('Connexion réussie');
-      this.router.navigateByUrl('/dashboard');
-    } else {
-      // Identifiants de connexion incorrects
-      console.log('Identifiants de connexion incorrects');
-    }
+    this.userService.signIn(this.username, this.password)
+      .subscribe(
+        (user:User) => {
+          console.log('Connexion avec succès : ', user);
+          this.router.navigate(['/dashboard']);
+        },(error:any)=>{
+          console.log('Erreur lors de la connexion : ', error);
+        }
+      );
   }
   ngOnInit(): void {
     

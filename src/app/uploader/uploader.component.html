@@ -26,8 +26,19 @@
     </div>
   </div>
     <!-- Contenu principal -->
-  <div class="col-lg-9">
-    <!-- Contenu principal de votre application -->
-    <h1>Uploader</h1>
-  </div>
+    <div class="container m-4 p-5">
+      <div class="row justify-content-center align-items-center mt-3">
+        <div class="col-lg-9 mt-3">
+          <h1 class="text-center mt-3" style="margin-bottom: 50px; color: rgb(255, 145, 0); font-size: 30px;">Uploader un fichier</h1>
+        
+          <input type="file" class="form-control mt-4" id="file-input">
+          <br>
+          <button (click)="uploadFile()" class="form-control mb-3">Upload</button>
+          
+          <div id="progress-bar">
+            <div id="progress"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
