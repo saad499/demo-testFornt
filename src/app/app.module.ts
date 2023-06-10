@@ -16,6 +16,8 @@ import { BarChartComponent } from './dashboard/bar-chart/bar-chart.component';
 import { GrapheCondidatComponent } from './dashboard/graphe-condidat/graphe-condidat.component';
 import { PieChartComponent } from './dashboard/pie-chart/pie-chart.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UpdateProductComponent } from './update-product/update-product.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     DataTableComponent,
     BarChartComponent,
     GrapheCondidatComponent,
-    PieChartComponent
+    PieChartComponent,
+    UpdateProductComponent
     
   ],
   imports: [
@@ -38,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

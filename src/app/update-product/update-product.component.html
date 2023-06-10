@@ -1,0 +1,42 @@
+<!--
+    order_Id:number;
+    product_name:string;
+    quantity_order:number;
+    price_each:number;
+    order_date:string;
+    purchase_address:string;
+-->
+<div class="container pt-5">
+    <div class="row justify-content-center pt-5">
+        <div class="col-md-6 border m-3">
+            <h1 class="card-header text-center pt-4" style="color:rgb(255, 145, 0); font-size: 30px;">Update product</h1>
+            <form (ngSubmit)="onClick()" *ngIf="product" [formGroup]="updateProductFormGroup">
+                <div class="mb-3">
+                  <label class="form-label">Product name</label>
+                  <input type="text" class="form-control" formControlName="product_name" [(ngModel)]="product.product_name" placeholder="Product name">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Quantity order</label>
+                  <input type="number" class="form-control" formControlName="quantity_order" [(ngModel)]="product.quantity_order" placeholder="quantity order">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Price</label>
+                  <input type="text" class="form-control" [(ngModel)]="product.price_each" formControlName="price_each" placeholder="Choose the price">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Order date</label>
+                    <input type="text" class="form-control" formControlName="order_date" [(ngModel)]="product.order_date" placeholder="Order date">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Purchase address</label>
+                    <input type="text" class="form-control" formControlName="purchase_address" [(ngModel)]="product.purchase_address" placeholder="Purchase address">
+                </div>
+                
+                
+                <div class="card-body text-center mb-3">
+                    <button type="submit" [disabled]="!updateProductFormGroup" class="btn btn-primary">Update</button>
+                </div>
+        </form>
+        </div>
+    </div>
+</div>

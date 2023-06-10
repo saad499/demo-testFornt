@@ -27,151 +27,71 @@
   </div>
     <!-- Contenu principal -->
     <div class="col-lg-9">
-      <h1 class="text-center mt-5" style="color:rgb(255, 145, 0); font-size: 30px;">Data table</h1>
+      <h1 class="text-center mt-3" style="color:rgb(255, 145, 0); font-size: 30px;">Data table</h1>
     
       <!-- Formulaire de recherche -->
-      <form class="d-flex justify-content-end mt-3 mb-3">
+      <form class="d-flex justify-content-end mt-1 mb-1" *ngIf="searchProductFormGroup" (ngSubmit)="searchproduct()" [formGroup]="searchProductFormGroup">
         <div class="input-group w-25">
-          <input type="text" class="form-control" placeholder="Rechercher">
+          <input type="text" class="form-control" formControlName="keyword" placeholder="Rechercher" (keyup)="searchproduct()">
           <button class="btn btn-info" type="submit">Rechercher</button>
         </div>
       </form>
     
       <!-- Table -->
-      <table class="table m-5">
+      <table class="table m-4">
         <thead>
           <tr>
-            <th>#</th>
-            <th>Colonne 1</th>
-            <th>Colonne 2</th>
-            <th>Colonne 3</th>
-            <th>Colonne 4</th>
-            <th>Supprimer</th>
-            <th>Modifier</th>
+            <th>Order Id</th>
+            <th>Product name</th>
+            <th>Quantity product</th>
+            <th>Price</th>
+            <th>Order date</th>
+            <th>Purchase address</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>#</td>
-            <td>Colonne 1</td>
-            <td>Colonne 2</td>
-            <td>Colonne 3</td>
-            <td>Colonne 4</td>
-            <td>Supprimer</td>
-            <td>Modifier</td>
+          <!--
+            order_Id:number;
+    product_name:string;
+    quantity_order:number;
+    price_each:number;
+    order_date:string;
+    purchase_address:string;
+          -->
+          <tr *ngFor="let p of product">
+            <td>{{p.order_Id}}</td>
+            <td>{{p.product_name}}</td>
+            <td>{{p.quantity_order}}</td>
+            <td>{{p.price_each}}</td>
+            <td>{{p.order_date}}</td>
+            <td>{{p.purchase_address}}</td>
+            <td>
+              <button (click)="updateProduct(p.order_Id)" class="btn btn-warning mx-1">update</button>
+              <button (click)="deleteProduct(p.order_Id)" class="btn btn-danger">delete</button>
+            </td>
           </tr>
-          <tr>
-            <td>#</td>
-            <td>Colonne 1</td>
-            <td>Colonne 2</td>
-            <td>Colonne 3</td>
-            <td>Colonne 4</td>
-            <td>Supprimer</td>
-            <td>Modifier</td>
-          </tr>
-          <tr>
-            <td>#</td>
-            <td>Colonne 1</td>
-            <td>Colonne 2</td>
-            <td>Colonne 3</td>
-            <td>Colonne 4</td>
-            <td>Supprimer</td>
-            <td>Modifier</td>
-          </tr>
-          <tr>
-            <td>#</td>
-            <td>Colonne 1</td>
-            <td>Colonne 2</td>
-            <td>Colonne 3</td>
-            <td>Colonne 4</td>
-            <td>Supprimer</td>
-            <td>Modifier</td>
-          </tr>
-          <tr>
-            <td>#</td>
-            <td>Colonne 1</td>
-            <td>Colonne 2</td>
-            <td>Colonne 3</td>
-            <td>Colonne 4</td>
-            <td>Supprimer</td>
-            <td>Modifier</td>
-          </tr>
-          <tr>
-            <td>#</td>
-            <td>Colonne 1</td>
-            <td>Colonne 2</td>
-            <td>Colonne 3</td>
-            <td>Colonne 4</td>
-            <td>Supprimer</td>
-            <td>Modifier</td>
-          </tr>
-          <tr>
-            <td>#</td>
-            <td>Colonne 1</td>
-            <td>Colonne 2</td>
-            <td>Colonne 3</td>
-            <td>Colonne 4</td>
-            <td>Supprimer</td>
-            <td>Modifier</td>
-          </tr>
-          <tr>
-            <td>#</td>
-            <td>Colonne 1</td>
-            <td>Colonne 2</td>
-            <td>Colonne 3</td>
-            <td>Colonne 4</td>
-            <td>Supprimer</td>
-            <td>Modifier</td>
-          </tr>
-          <tr>
-            <td>#</td>
-            <td>Colonne 1</td>
-            <td>Colonne 2</td>
-            <td>Colonne 3</td>
-            <td>Colonne 4</td>
-            <td>Supprimer</td>
-            <td>Modifier</td>
-          </tr>
-          <tr>
-            <td>#</td>
-            <td>Colonne 1</td>
-            <td>Colonne 2</td>
-            <td>Colonne 3</td>
-            <td>Colonne 4</td>
-            <td>Supprimer</td>
-            <td>Modifier</td>
-          </tr>
-          <tr>
-            <td>#</td>
-            <td>Colonne 1</td>
-            <td>Colonne 2</td>
-            <td>Colonne 3</td>
-            <td>Colonne 4</td>
-            <td>Supprimer</td>
-            <td>Modifier</td>
-          </tr>
+          
         </tbody>
       </table>
     
       <!-- Pagination -->
       <nav>
         <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Précédent</a>
-          </li>
-          <li class="page-item active" aria-current="page">
-            <a class="page-link" href="#">1</a>
-          </li>
           <li class="page-item">
-            <a class="page-link" href="#">2</a>
+            <button class=" page-link"(click)="previousPage()">Previous</button>
           </li>
+          <ng-container *ngFor="let i of getPageArray(totalPages)">
+            <li class="page-item" [class.active]="page === i" >
+              <button class="page-link" (click)="goToPage(i)">{{i+1}}</button>
+            </li>
+          </ng-container>
           <li class="page-item">
-            <a class="page-link" href="#">3</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">Suivant</a>
+            <button class="page-link" (click)="nextPage()">next</button>
           </li>
         </ul>
+
+        
       </nav>
     </div>
     

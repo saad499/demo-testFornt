@@ -5,6 +5,7 @@ import { SignUpComponent } from './connexion/sign-up/sign-up.component';
 import { UploaderComponent } from './uploader/uploader.component';
 import { DataTableComponent } from './data-table/data-table.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
 
 const routes: Routes = [
   {path:'',component:SignInComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent},
   {path:'data-table',component:DataTableComponent},
   {path:'uploader',component:UploaderComponent},
+  {path:'update-product/:id',component:UpdateProductComponent},
   
 ];
 
