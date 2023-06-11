@@ -1,4 +1,5 @@
 export interface Page<T> {
+    map(arg0: (product: any) => { name: any; quantity: any; }): unknown;
     content: T[];
     pageable: {
       sort: {

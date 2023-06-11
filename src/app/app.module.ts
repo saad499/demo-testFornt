@@ -19,6 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { NgChartsModule } from 'ng2-charts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     HttpClientModule,
     ReactiveFormsModule,
     NgChartsModule,
-    NgxChartsModule
+    NgxChartsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
