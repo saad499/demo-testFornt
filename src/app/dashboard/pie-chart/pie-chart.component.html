@@ -1,1 +1,19 @@
-<p>pie-chart works!</p>
+<div>
+  <canvas baseChart
+          [datasets]="chartData"
+          [labels]="chartLabels"
+          [options]="chartOptions"
+          [legend]="chartLegend"
+          chartType="pie">
+  </canvas>
+</div>
+<!--
+<div>
+  <ngx-charts-pie-chart
+    [results]="chartData"
+    [labels]="chartLabels"
+    [legend]="chartLegend"
+    [options]="chartOptions"
+    [chartType]="chartType"
+  ></ngx-charts-pie-chart>
+</div>-->

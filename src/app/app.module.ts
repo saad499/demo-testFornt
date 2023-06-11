@@ -18,6 +18,7 @@ import { PieChartComponent } from './dashboard/pie-chart/pie-chart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { NgChartsModule } from 'ng2-charts';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { NgChartsModule } from 'ng2-charts';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgChartsModule
+    NgChartsModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

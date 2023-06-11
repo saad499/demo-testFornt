@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Page } from '../models/Page.model';
 
+
 @Component({
   selector: 'app-update-product',
   templateUrl: './update-product.component.html',
